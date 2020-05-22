@@ -7,16 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Master_Game_Forms.Entities;
 
 namespace Master_Game_Forms
 {
     public partial class MainMenu : Form
     {
-        private static double playerHealth; 
+        private static BaseEntity Player;
+
         public MainMenu()
         {
             InitializeComponent();
             //TODO: Need to figure out how what need to be initilized, if anything, before starting the game. Maybe I dont need to initilize anything?
+            InitializationGameComponents();
+        }
+
+        /// <summary>
+        /// Method to initialize different game components.
+        /// </summary>
+        private void InitializationGameComponents()
+        {
+            // Initilize player
+            BaseEntity player = new BaseEntity(100, 100);
+            Player = player;
         }
 
         private void WelcomeLabel_Click(object sender, EventArgs e)
@@ -26,8 +39,6 @@ namespace Master_Game_Forms
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            // Set player health
-            playerHealth = 100;
             this.Hide();
             Game1 game1 = new Game1();
             game1.Show();
@@ -40,7 +51,7 @@ namespace Master_Game_Forms
 
         public static double GetPlayerHealth()
         {
-            return playerHealth;
+            return Player.GetHealth();
         }
     }
 }
