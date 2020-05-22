@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Master_Game_Forms
 {
-    public partial class Form1 : Form
+    public partial class Game1 : Form
     {
-        public Form1()
+        public Game1()
         {
             InitializeComponent();
+        }
+
+        private void Game1_Load(object sender, EventArgs e)
+        {
+            this.Test.Text = MainMenu.GetPlayerHealth().ToString();
         }
     }
 }
