@@ -51,7 +51,7 @@ namespace Master_Game_Forms
 
         public static double GetPlayerHealth()
         {
-            return Player.GetHealth();
+            return Player.GetHealthPoints();
         }
     }
 }
