@@ -19,7 +19,8 @@ namespace Master_Game_Forms
 
         private void Game1_Load(object sender, EventArgs e)
         {
-            this.Test.Text = MainMenu.GetPlayerHealth().ToString();
+            string playerHealthPoints = MainMenu.GetPlayerHealth().ToString();
+            this.HealthLabel.Text = "Health: " + playerHealthPoints;
         }
     }
 }

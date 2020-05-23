@@ -17,7 +17,7 @@ namespace Master_Game_Forms.Entities
             MaxHealthPoints = maxHealthPoints;
         }
 
-        public float GetHealth()
+        public float GetHealthPoints()
         {
             return HealthPoints;
         }
